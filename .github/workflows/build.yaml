@@ -28,5 +28,5 @@ jobs:
         run: |
           helm lint ./
           helm plugin install https://github.com/chartmuseum/helm-push.git
-          helm package ./ --version ${TAG##*/} --app-version ${TAG##*/}
+          helm package ./ --version ${TAG##*/} 
           helm push ./${SERVICE_NAME}-${TAG##*/}.tgz https://${CHART_REGISTRY_URL} 
